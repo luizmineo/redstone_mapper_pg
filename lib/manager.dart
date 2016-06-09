@@ -87,7 +87,7 @@ class PostgreSql {
    * [values] can be a List, a Map or an encodable object. 
    */ 
   Future<int> execute(String sql, [values]) {
-    if (values != null && values is! Map && values is! Map ) {
+    if (values != null && values is! Map ) {
       values = _codec.encode(values);
     }
     return innerConn.execute(sql, values);
